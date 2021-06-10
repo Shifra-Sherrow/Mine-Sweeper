@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="icon" href="imgs/favicon.ico"  type="image/x-icon" />
+    <link rel="shortcut icon" href="imgs/favicon.ico"  type="image/x-icon" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Mine Sweeper</title>
+</head>
+
+<body onload="initGame()">
+
+    <div class="header">
+        <h1>Mine Sweeper</h1>
+        <div class="header-container">
+            <img class="emoji" src="imgs/thinking.png" onclick="initGame()" />
+            <div class="timer"><span class="minutes"></span>:<span class="seconds"></span></div>
+            <h2 class="lives"></h2>
+            <button class="header-btn undo unclickable" onclick="onUndo()"><i class="far fa-undo-alt"></i>Undo</button>
+            <button class="header-btn best-score" onclick="toggleModal()">Best Scores<i
+                    class="far fa-star"></i></button>
+            <div class="modal">
+                <div class="easy">Easy: <span></span></div>
+                <div class="medium">Medium: <span></span></div>
+                <div class="hard">Hard: <span></span></div>
+                <button onclick="resetScores()">Reset Scores</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="board-container">
+        <div class="board-area">
+            <div class="board"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2><span class="flags"></span>🚩<span class="bombs"></span>💣</h2>
+        <h2 class="hints">
+            <span class="hint1" onclick="hint(this)"></span>
+            <span class="hint2" onclick="hint(this)"></span>
+            <span class="hint3" onclick="hint(this)"></span>
+        </h2>
+        <div class="levels">
+            <button onclick="setLevel(4)">Easy</button>
+            <button onclick="setLevel(8)">Medium</button>
+            <button onclick="setLevel(12)">Hard</button>
+        </div>
+        <br />
+        <h6>&copy; Shifra Sherrow</h6>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/board.js"></script>
+    <script src="js/clicks.js"></script>
+
+</body>
+
+</html>
