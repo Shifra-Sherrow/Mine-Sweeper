@@ -1,1 +1,1 @@
-Favorite Minesweeper game, with twists to upgrade the experience!
+The familia Minesweeper game, with twists to upgrade the experience!
