@@ -1,1 +1,1 @@
-The familia Minesweeper game, with twists to upgrade the experience!
+The good old game with fun twists!
