@@ -43,18 +43,6 @@ function firstClick(loc) {
     setMinesNegsCount(gBoard);
 }
 
-function saveState() {
-    var currState = {
-        gGame: deepCopy(gGame),
-        gBoard: deepCopy(gBoard),
-        lives: document.querySelector('.lives').innerText,
-        emoji: document.querySelector('.header .emoji').src,
-        flags: document.querySelector('.flags').innerText
-    };
-    gGameState.push(currState);
-    document.querySelector('.undo').classList.remove('unclickable');
-}
-
 function mineClicked(loc) {
     var updateLivesEl = '';
 
@@ -169,13 +157,24 @@ function peek(idxI, idxJ) {
     }, 1000 * 2);
 }
 
+function saveState() {
+    var currState = {
+        gGame: deepCopy(gGame),
+        gBoard: deepCopy(gBoard),
+        lives: document.querySelector('.lives').innerText,
+        flags: document.querySelector('.flags').innerText
+    };
+    gGameState.push(currState);
+    document.querySelector('.undo').classList.remove('unclickable');
+}
+
 function onUndo() {
     var prevState = gGameState.pop();
     gGame = prevState.gGame;
     gBoard = prevState.gBoard;
     renderBoard(gBoard);
     setInnerText('.lives', prevState.lives);
-    updateSrc('.header .emoji', prevState.emoji);
+    updateSrc('.header .emoji', 'imgs/thinking.png');
     setInnerText('.flags', prevState.flags);
 
     if (prevState.gTimeStart) {
