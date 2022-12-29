@@ -258,5 +258,6 @@ table {
 
 .footer h6 {
     padding-block-end: 10px;
+    font-size: .75rem;
     font-weight: 500;
 }
