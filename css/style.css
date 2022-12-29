@@ -120,11 +120,13 @@ button {
     height: 175px;
     transform: translateY(-38px);
     opacity: 0;
+    pointer-events: none;
     transition: opacity .8s ease-in-out;
 }
 
 .modal.show {
     opacity: 1;
+    pointer-events: unset;
 }
 
 .modal>div {
