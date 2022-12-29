@@ -67,7 +67,9 @@ function setScores() {
     document.querySelector('.hard span').innerText = bestScores.hard !== 1000000 ? bestScores.hard : '- -';
 }
 
-function resetScores() {
+function resetScores(ev) {
+    ev.stopPropagation();
+    
     saveToStorage('best-scores', { easy: 1000000, medium: 1000000, hard: 1000000 });
     setScores();
 }
